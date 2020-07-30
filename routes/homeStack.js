@@ -2,6 +2,7 @@ import * as React from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { HeaderBackButton } from '@react-navigation/stack';
 import Home from '../screens/Home';
 import Detail from '../screens/Detail';
 import NewPatientfillin from '../screens/NewPatientfillin';
@@ -25,7 +26,7 @@ function LogoTitle() {
   );
 }
 
-export default function HomeStack() {
+export default function HomeStack(navigation) {
   return (
     <Stack.Navigator initialRouteName="ADAPS" 
     screenOptions={{
@@ -39,6 +40,7 @@ export default function HomeStack() {
           fontWeight: 'bold',
           fontSize: 32,
         },
+        headerBackTitle: ' ',
       }}>
       <Stack.Screen name="ADAPS" component={Login} options={{
         headerTitleAlign: 'left', 

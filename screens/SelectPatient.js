@@ -3,9 +3,20 @@ import {View, Text, Button, Alert, StyleSheet, TextInput, Image,TouchableOpacity
 import icon_new from '../images/icon_newPatient.png'
 import icon_existed from '../images/icon_oldPatient.png'
 import Color from '../constants/color'
+import { firedb } from "../components/firebase";
+
+const getData = (uid_in) => {
+    var Name;
+    firedb.ref("users/"+uid_in).on("value", (snapshot) => {
+       Name = snapshot.val().name;
+    });
+    console.log(Name);
+    firedb.ref("users/"+uid_in).off;
+  };
 
 const SelectPatient = ({navigation,route}) => {
     const  {uid} = route.params;
+    getData(uid);
     return (
         <View style={styles.screen}>
                 <Text>{JSON.stringify(uid)} </Text>
