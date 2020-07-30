@@ -5,9 +5,10 @@ import icon_existed from '../images/icon_oldPatient.png'
 import Color from '../constants/color'
 
 const SelectPatient = ({navigation,route}) => {
-    const [Highscore,setHighscore] = useState();
+    const  {uid} = route.params;
     return (
         <View style={styles.screen}>
+                <Text>{JSON.stringify(uid)} </Text>
                 <TouchableOpacity style={{alignItems: 'center', flex :1}} onPress={()=>
                 {navigation.navigate('NewPatient');}}>
                     <Image style ={styles.mediumlogo} source = {icon_new} />

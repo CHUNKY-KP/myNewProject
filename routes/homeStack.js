@@ -4,11 +4,12 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from '../screens/Home';
 import Detail from '../screens/Detail';
-import NewPatientfillin from '../screens/NewPatientfillin'
-import SelectPatientScreen from '../screens/SelectPatient'
+import NewPatientfillin from '../screens/NewPatientfillin';
+import SelectPatientScreen from '../screens/SelectPatient';
 import Header from '../components/header';
 import logo from '../images/logo_bartlab.png';
 import Colors from '../constants/color'
+import Login from '../screens/Login'
 import SelectPatient from '../screens/SelectPatient';
 
 const Stack = createStackNavigator();
@@ -23,6 +24,7 @@ function LogoTitle() {
     </View>
   );
 }
+
 export default function HomeStack() {
   return (
     <Stack.Navigator initialRouteName="ADAPS" 
@@ -38,11 +40,12 @@ export default function HomeStack() {
           fontSize: 32,
         },
       }}>
-      <Stack.Screen name="ADAPS" component={Home} options={{
+      <Stack.Screen name="ADAPS" component={Login} options={{
         headerTitleAlign: 'left', 
         headerRight: props => <LogoTitle {...props} /> }}/>
       <Stack.Screen name="NewPatient" component={NewPatientfillin} initialParams={{ itemId: 42 }} />
       <Stack.Screen name="SelectPatient" component= {SelectPatientScreen} />
+      
     </Stack.Navigator>
   );
 }

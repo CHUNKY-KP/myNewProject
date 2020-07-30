@@ -56,6 +56,7 @@ const sendData = (
   });
 };
 const NewPatientfillin = ({navigation,route}) => {
+  const  {uid} = route.params;
   const [HN, setHN] = useState();
   const [FirstName, setFirstName] = useState();
   const [LastName, setLastName] = useState();
