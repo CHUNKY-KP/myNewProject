@@ -21,12 +21,12 @@ const SelectPatient = ({navigation,route}) => {
         <View style={styles.screen}>
                 <Text>{JSON.stringify(uid)} </Text>
                 <TouchableOpacity style={{alignItems: 'center', flex :1}} onPress={()=>
-                {navigation.navigate('NewPatient');}}>
+                {navigation.navigate('NewPatient',{uid: uid});}}>
                     <Image style ={styles.mediumlogo} source = {icon_new} />
                     <Text style={{fontSize:24, color:Color.blue_button}}>New Patient</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={{alignItems: 'center', flex :1}} onPress={()=>
-                {navigation.navigate('OldPatient');}}>
+                {navigation.navigate('Checkup',{uid: uid});}}>
                     <Image style ={styles.mediumlogo} source = {icon_existed} />
                     <Text style={{fontSize:24, color:Color.blue_button}}>Established Patient</Text>
                 </TouchableOpacity>

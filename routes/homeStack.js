@@ -12,6 +12,7 @@ import logo from '../images/logo_bartlab.png';
 import Colors from '../constants/color'
 import Login from '../screens/Login'
 import SelectPatient from '../screens/SelectPatient';
+import CheckUp from '../screens/Checkup'
 
 const Stack = createStackNavigator();
 function LogoTitle() {
@@ -47,7 +48,7 @@ export default function HomeStack(navigation) {
         headerRight: props => <LogoTitle {...props} /> }}/>
       <Stack.Screen name="NewPatient" component={NewPatientfillin} initialParams={{ itemId: 42 }} />
       <Stack.Screen name="SelectPatient" component= {SelectPatientScreen} />
-      
+      <Stack.Screen name="Checkup" component = {CheckUp} />
     </Stack.Navigator>
   );
 }

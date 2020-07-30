@@ -27,7 +27,8 @@ const sendData = (
   Tel,
   Email,
   Address,
-  date
+  date,
+  uid
 ) => {
   /*HN,
   FirstName,
@@ -47,6 +48,7 @@ const sendData = (
     Tel: Tel,
     Email: Email,
     Address: Address,
+    Uid: uid,
   });
 
   firedb.ref("Patient/" + HN + "/Birthdate").update({
@@ -187,8 +189,9 @@ const NewPatientfillin = ({navigation,route}) => {
                   Tel,
                   Email,
                   Address,
-                  date
-                ); {navigation.navigate('ADAPS')};}
+                  date,
+                  uid
+                ); {navigation.navigate('SelectPatient',{HNid: HN})};}
               }
             />
           </ScrollView>
