@@ -6,7 +6,7 @@ import logo_pass from '../images/pass_icon.png'
 import {auth} from '../components/firebase'
 
 const Login = ({navigation,route}) => {
-    
+
     const [loginID,onChangeLogin] = useState('');
     const [loginPass,onChangePass] = useState('');
     const [errormsg,onError] = useState('false');

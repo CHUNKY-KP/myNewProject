@@ -10,10 +10,14 @@ import SelectPatientScreen from '../screens/SelectPatient';
 import Header from '../components/header';
 import logo from '../images/logo_bartlab.png';
 import Colors from '../constants/color'
-import Login from '../screens/Login'
-import SelectPatient from '../screens/SelectPatient';
-import CheckUp from '../screens/Checkup'
-
+import Login from '../screens/SignInScreen'
+import SelectPatient from '../screens/SelectPatientScreen';
+import ExistingPatient from '../screens/ExistingPatientRecordScreen';
+import SignUpScreen1 from '../screens/SignUpScreen1';
+import SignUpScreen2 from '../screens/SignUpScreen2';
+import Questionnaire from '../screens/Questionnaire';
+import Checkup from '../screens/Checkup';
+import OldPatientFillin from '../screens/OldPatientFillin';
 const Stack = createStackNavigator();
 function LogoTitle() {
   return (
@@ -46,9 +50,19 @@ export default function HomeStack(navigation) {
       <Stack.Screen name="ADAPS" component={Login} options={{
         headerTitleAlign: 'left', 
         headerRight: props => <LogoTitle {...props} /> }}/>
-      <Stack.Screen name="NewPatient" component={NewPatientfillin} initialParams={{ itemId: 42 }} />
-      <Stack.Screen name="SelectPatient" component= {SelectPatientScreen} />
-      <Stack.Screen name="Checkup" component = {CheckUp} />
+      <Stack.Screen name="NewPatient" component={NewPatientfillin} options= {{
+        title: 'New Patient Information',}}/>
+      <Stack.Screen name="Question" component={Questionnaire} options= {{
+        title: 'Test Information',}}/>
+      <Stack.Screen name="Checkup" component= {Checkup} options= {{
+        title: 'Test Information',}} />
+      <Stack.Screen name="SelectPatient" component= {SelectPatient} options= {{
+        title: 'Select Patient',}} />
+         <Stack.Screen name="OldPatient" component= {OldPatientFillin} options= {{
+        title: 'Existed Patient',}} />
+      <Stack.Screen name="SignUpScreen" component= {SignUpScreen1} options= {{title: 'Sign Up'}} />
+      <Stack.Screen name="SignUpScreen2" component = {SignUpScreen2} options= {{title: 'Sign Up'}}  />
+      <Stack.Screen name="ExistingPatient" component = {ExistingPatient} options= {{title: 'Existed Patient'}}  />
     </Stack.Navigator>
   );
 }
