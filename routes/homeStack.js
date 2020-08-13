@@ -3,11 +3,7 @@ import { View, Text, TextInput, Button, StyleSheet, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { HeaderBackButton } from '@react-navigation/stack';
-import Home from '../screens/Home';
-import Detail from '../screens/Detail';
 import NewPatientfillin from '../screens/NewPatientfillin';
-import SelectPatientScreen from '../screens/SelectPatient';
-import Header from '../components/header';
 import logo from '../images/logo_bartlab.png';
 import Colors from '../constants/color'
 import Login from '../screens/SignInScreen'
